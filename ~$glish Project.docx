@@ -1,7 +1,0 @@
-from docx import Document
-
-doc_path = r'C:\Konseptutvikling\vikkva\English Project.docx'
-doc = Document(doc_path)
-
-for para in doc.paragraphs:
-    print(para.text)
