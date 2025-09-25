@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>My 5 Visited Cities</title>
@@ -11,13 +11,18 @@
       padding: 20px;
     }
 
+    h2 {
+      color: white;
+    }
+
+    /* Each row = button + text box */
     .row {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
     }
 
-    /* By-knappene */
+    /* City button */
     .city a {
       display: inline-block;
       padding: 10px 15px;
@@ -26,7 +31,7 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: bold;
-      width: 160px; /* fast bredde så alt står pent */
+      width: 160px;   /* same width for all */
       text-align: center;
     }
 
@@ -36,7 +41,7 @@
       outline: 2px solid #fff;
     }
 
-    /* Info-bokser */
+    /* Text box */
     .info {
       flex: 1;
       background-color: #e6ebf1;
@@ -45,7 +50,7 @@
       margin-left: 20px;
     }
 
-    .info h2 {
+    .info h3 {
       margin-top: 0;
     }
   </style>
@@ -56,40 +61,40 @@
   <div class="row">
     <div class="city"><a href="https://snl.no/Sydney">Sydney</a></div>
     <div class="info">
-      <h2>Sydney</h2>
-      <p>Sydney er den største byen i Australia, kjent for operahuset og havnen.</p>
+      <h3>Sydney</h3>
+      <p>Sydney is the largest city in Australia, famous for the Opera House and the harbour.</p>
     </div>
   </div>
 
   <div class="row">
     <div class="city"><a href="https://snl.no/Canberra">Canberra</a></div>
     <div class="info">
-      <h2>Canberra</h2>
-      <p>Canberra er hovedstaden i Australia og sete for parlamentet.</p>
+      <h3>Canberra</h3>
+      <p>Canberra is the capital city of Australia and home to the Parliament House.</p>
     </div>
   </div>
 
   <div class="row">
     <div class="city"><a href="https://snl.no/Melbourne">Melbourne</a></div>
     <div class="info">
-      <h2>Melbourne</h2>
-      <p>Melbourne er kjent for kunst, sport og kaffekultur.</p>
+      <h3>Melbourne</h3>
+      <p>Melbourne is known for its art, sports, and coffee culture.</p>
     </div>
   </div>
 
   <div class="row">
     <div class="city"><a href="https://snl.no/Brisbane">Brisbane</a></div>
     <div class="info">
-      <h2>Brisbane</h2>
-      <p>Brisbane har et subtropisk klima og livlig kultur.</p>
+      <h3>Brisbane</h3>
+      <p>Brisbane has a subtropical climate and a vibrant culture.</p>
     </div>
   </div>
 
   <div class="row">
     <div class="city"><a href="https://snl.no/Adelaide">Adelaide</a></div>
     <div class="info">
-      <h2>Adelaide</h2>
-      <p>Adelaide er kjent for festivaler og vinområder i nærheten.</p>
+      <h3>Adelaide</h3>
+      <p>Adelaide is famous for its festivals and nearby wine regions.</p>
     </div>
   </div>
 </body>
