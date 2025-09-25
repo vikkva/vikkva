@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>My 5 Visited Cities</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2f4f66;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    /* By-knappene */
+    .city a {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      width: 160px; /* fast bredde så alt står pent */
+      text-align: center;
+    }
+
+    .city a:hover,
+    .city a:focus {
+      background-color: #0056b3;
+      outline: 2px solid #fff;
+    }
+
+    /* Info-bokser */
+    .info {
+      flex: 1;
+      background-color: #e6ebf1;
+      padding: 15px;
+      border-radius: 5px;
+      margin-left: 20px;
+    }
+
+    .info h2 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>My 5 Visited Cities</h2>
+
+  <div class="row">
+    <div class="city"><a href="https://snl.no/Sydney">Sydney</a></div>
+    <div class="info">
+      <h2>Sydney</h2>
+      <p>Sydney er den største byen i Australia, kjent for operahuset og havnen.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="city"><a href="https://snl.no/Canberra">Canberra</a></div>
+    <div class="info">
+      <h2>Canberra</h2>
+      <p>Canberra er hovedstaden i Australia og sete for parlamentet.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="city"><a href="https://snl.no/Melbourne">Melbourne</a></div>
+    <div class="info">
+      <h2>Melbourne</h2>
+      <p>Melbourne er kjent for kunst, sport og kaffekultur.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="city"><a href="https://snl.no/Brisbane">Brisbane</a></div>
+    <div class="info">
+      <h2>Brisbane</h2>
+      <p>Brisbane har et subtropisk klima og livlig kultur.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="city"><a href="https://snl.no/Adelaide">Adelaide</a></div>
+    <div class="info">
+      <h2>Adelaide</h2>
+      <p>Adelaide er kjent for festivaler og vinområder i nærheten.</p>
+    </div>
+  </div>
+</body>
+</html>
