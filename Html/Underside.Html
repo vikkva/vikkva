@@ -2,14 +2,14 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8">
-  <title>Underside</title>
+  <title>Sub Page</title>
 </head>
 <body>
-  <h1>Subpage</h1>
-  <p>You came here via the link from the main page.</p>
+ 
+  
 
   <!-- Knapp for å gå tilbake -->
-  <a href="../index.html" class="knapp">Back to main page</a>
+  <a href="index.html" class="knapp">Back to main Page</a>
 
   <style>
     .knapp {
@@ -24,5 +24,154 @@
       background-color: #1e7e34;
     }
   </style>
-</body>
+</head>
+<body>
+
+  <!-- Google Fonts: Inter -->
+  <link href="" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6fbff;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent-1: #0f766e;
+      --accent-2: #f97316;
+      --shadow: 0 6px 18px rgba(12,20,40,0.08);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, var(--bg), #eef7fb 60%);
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1200px; margin: 32px auto; padding: 24px; }
+    h1 { font-size: 28px; margin-bottom: 8px; font-weight: 800; }
+    p { color: var(--muted); }
+
+    /* Header */
+    header.hero { display: flex; flex-direction: column; gap: 24px; margin-bottom: 26px; min-height: 300px; }
+    .intro { background: linear-gradient(135deg, rgba(15,118,110,0.06), rgba(249,115,22,0.04)); padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .highlight { display: flex; justify-content: space-between; align-items: center; padding: 18px; border-radius: var(--radius); background: linear-gradient(90deg, rgba(2,6,23,0.02), rgba(255,255,255,0.7)); box-shadow: var(--shadow); margin-top: 18px; }
+    .cta { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); color: white; padding: 10px 14px; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; }
+
+    .stats { display: flex; gap: 12px; margin-top: 10px; }
+    .stat { background: var(--card); padding: 10px 12px; border-radius: 12px; box-shadow: var(--shadow); text-align: center; min-width: 80px; }
+    .stat strong { display: block; font-weight: 700; }
+
+    /* Grid and Cards */
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(12,20,40,0.12); }
+    .card .img { height: 180px; background-size: cover; background-position: center; }
+    .card-body { padding: 14px; }
+    .card-body h3 { margin-bottom: 8px; font-size: 18px; }
+    .card-body p { color: var(--muted); font-size: 14px; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-top: 20px; }
+    .gallery img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; }
+
+    /* Tips */
+    .tips { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+    .tip { background: var(--card); padding: 12px; border-radius: 12px; display: flex; gap: 12px; align-items: flex-start; box-shadow: var(--shadow); }
+
+    footer { margin-top: 20px; text-align: center; color: var(--muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="intro">
+        <h1>Australia — My Visited Places</h1>
+        <p>Explore highlights, photos, and tips from my trip.</p>
+        <div class="highlight">
+          <div>Favorite moment: Be a tourist in general</div>
+          <button class="cta" id="see-constructions-btn">See Constructions</button>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>5</strong>Visited Places</div>
+          <div class="stat"><strong>3,200 km</strong>Total Distance</div>
+          <div class="stat"><strong>2 weeks</strong>Travel Time</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cities Constructions Section -->
+    <section id="constructions" class="places-grid">
+      <h3>Cities Constructions</h3>
+
+      <div class="card">
+        <div class="img" style="background-image:url('Bilder/Opera.png')"></div>
+        <div class="card-body">
+          <h3>Sydney Opera House</h3>
+          <p>Featuring distinctive white sail-shaped roofs rising above Sydney Harbour.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img" style="background-image:url('Bilder/Parliament.jpg')"></div>
+        <div class="card-body">
+          <h3>Parliament House</h3>
+          <p>Modern architectural design with a large grass lawn and gardens in front, located in Canberra.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img" style="background-image:url('Bilder/32.jpg')"></div>
+        <div class="card-body">
+          <h3>The Twelve Apostles</h3>
+          <p>Iconic limestone stacks off the coast of Port Campbell, Victoria, Australia.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img" style="background-image:url('Bilder/Brisbane (2).jpg')"></div>
+        <div class="card-body">
+          <h3>Brisbane</h3>
+          <p>Modern skyline with the Brisbane River in the foreground and vibrant city life.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="img" style="background-image:url('Bilder/article.mobile.png')"></div>
+        <div class="card-body">
+          <h3>Adelaide</h3>
+          <p>Capital of South Australia, featuring urban architecture and a welcoming atmosphere.</p>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- Tips -->
+    <h3>Tips</h3>
+    <div class="tips">
+      <div class="tip"><strong>Sunscreen:</strong> Remember to apply even on cloudy days.</div>
+      <div class="tip"><strong>Snorkeling:</strong> Book early for calm water and clear visibility.</div>
+      <div class="tip"><strong>Rental Car:</strong> Perfect for road trips and flexibility.</div>
+    </div>
+
+    <footer>Saved 2025</footer>
+  </div>
+
+  <script>
+    // Smooth scroll to constructions section
+    document.getElementById('see-constructions-btn').addEventListener('click', function() {
+      document.getElementById('constructions').scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+</body> 
 </html>
