@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Australia</title>
-    Bilder/favicon.ico
+    <link rel="icon" type="image/favicon.ico">
     <style>
-        /* Reset */
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -21,12 +20,7 @@
             background: linear-gradient(90deg, #004d66, #007bff);
             color: white;
             text-align: center;
-            padding: 20px 0;
-            font-size: 32px;
-            font-weight: bold;
-        }
-
-        /* Navigation */
+ Navigation */
         .navbar {
             display: flex;
             justify-content: center;
@@ -57,56 +51,53 @@
         /* Main Content */
         .content {
             max-width: 1100px;
-            margin: 100px auto 40px;
+            margin: 80px auto 40px;
             padding: 20px;
-            text-align: center;
         }
 
         h2 {
             color: #004d66;
+            text-align: center;
             margin-bottom: 25px;
             font-size: 28px;
         }
 
-        .row {
-            display: flex;
-            align-items: center;
+        .city-card {
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            overflow: hidden;
-            padding: 15px;
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.3s ease;
         }
 
-        .city a {
+        .city-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .city-card h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .city-card p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .city-card a {
             display: inline-block;
-            padding: 10px 15px;
+            padding: 8px 14px;
             background-color: #007bff;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
-            width: 200px;
-            text-align: center;
+            font-size: 14px;
         }
 
-        .city a:hover {
+        .city-card a:hover {
             background-color: #0056b3;
-        }
-
-        .info {
-            flex: 1;
-            background-color: #e6ebf1;
-            padding: 15px;
-            border-radius: 5px;
-            margin-left: 20px;
-            text-align: left;
-        }
-
-        .info h3 {
-            margin-bottom: 8px;
-            color: #007bff;
         }
 
         /* Footer */
@@ -137,76 +128,60 @@
 </head>
 <body>
 
-<header>Australia</header>
+<header>
+    <h1>Australia</h1>
+</header>
 
 <!-- Navigation -->
 <div class="navbar">
-    <buttonhtmlSydney</button>
-    Canberra.htmlCanberra</button>
-    Twelve_Apostles_.htmlThe Twelve Apostles</button>
-    <button onclickisbane</button>
-    <button onclick="location.href='/div>
+    <button onclick="location.href='Sydney.html'">Sydney</button>
+    <button onclick="location.href='Canberra.html'">Canberra</button>
+    <button onclick="location.href='Twelve_Apostles_.html'">The Twelve Apostles</button>
+    <button onclick="location.href='Brisbane.html'">Brisbane</button>
+    <button onclick="location.href='Adelaide.html'">Adelaide</button>
+</div>
 
 <!-- Main Content -->
-<div class="content">
-    <h2>My 5 Visited Cities</h2>
-
-    <div class="row">
-        <div class="city">
-            https://en.wikipedia.org/wiki/Sydney_Opera_HouseSydney Opera House</a>
-        </div>
-        <div class="info">
-            <h3>Sydney Opera House</h3>
-            <p>The Sydney Opera House is one of the most famous landmarks in Australia, featuring its iconic sail-shaped design on the harbor.</p>
-        </div>
+    <div class="city-card">
+        <h3>Sydney Opera House</h3>
+        <p>The Sydney Opera House is one of the most famous landmarks in Australia, featuring its iconic sail-shaped design on the harbor.</p>
+        <a href="https://en.wikipedia.org/wiki/Sydney_Opera_House" target="_blank">Learn More</a>
     </div>
 
-    <div class="row">
-        <div class="city">
-            <atps://en.wikipedia.org/wiki/Parliament_House,_CanberraParliament House</a>
-        </div>
-        <div class="info">
-            <h3>Parliament House</h3>
-            <p>The main government building of Australia, located in Canberra, with modern architecture and a large grass lawn.</p>
-        </div>
+    <div class="city-card">
+        <h3>Parliament House</h3>
+        <p>The main government building of Australia, located in Canberra, with modern architecture and a large grass lawn.</p>
+        <a href="https://en.wikipedia.org/wiki/Parliament_House,_Canberra" target="_blank">Learn More</a>
     </div>
 
-    <div class="row">
-        <div class="city">
-            <a href="https://en.wikipedia.org/wiki/Twelve_(Victoria)The Twelve Apostles</a>
-        </div>
-        <div class="info">
-            <h3>The Twelve Apostles</h3>
-            <p>Natural limestone stacks off the coast of Victoria, showcasing the stunning beauty of the Australian coastline.</p>
-        </div>
+    <div class="city-card">
+        <h3>The Twelve Apostles</h3>
+        <p>Natural limestone stacks off the coast of Victoria, showcasing the stunning beauty of the Australian coastline.</p>
+        <a href="https://en.wikipedia.org/wiki/Twelve_Apostles_(Victoria)" target="_blank">Learn More</a>
     </div>
 
-    <div class="row">
-        <div class="city">
-            https://en.wikipedia.org/wiki/BrisbaneBrisbane</a>
-        </div>
-        <div class="info">
-            <h3>Brisbane</h3>
-            <p>A modern city with a subtropical climate and a lively riverfront, featuring a vibrant skyline and cultural attractions.</p>
-        </div>
+    <div class="city-card">
+        <h3>Brisbane</h3>
+        <p>A modern city with a subtropical climate and a lively riverfront, featuring a vibrant skyline and cultural attractions.</p>
+        <a href="https://en.wikipedia.org/wiki/Brisbane" target="_blank">Learn More</a>
     </div>
 
-    <div class="row">
-        <div class="city">
-            https://en.wikipedia.org/wiki/Adelaide
-        </div>
-        <div class="info">
-            <h3>Adelaide</h3>
-            <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
-        </div>
+    <div class="city-card">
+        <h3>Adelaide</h3>
+        <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
+        <a href="https://en.wikipedia.org/wiki/Adelaide" target="_blank">Learn More</a>
+    </div>
+        <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
+        https://en.wikipedia.org/wiki/AdelaideLearn More</a>
     </div>
 </div>
 
 <!-- Footer -->
 <footer>
-    <img src="Bilder/OSK.jpg" alt="tralia</p>
+    <img src="Bilder/OSK.jpg" alt="OSK">
+    <p>About Australia</p>
     <p>Australia is a federal country and monarchy in the continent of Oceania. It is the world's sixth-largest country by total area...</p>
-    English Project.pdfVisit English Project</a>
+    <a href="English Project.pdf">Visit English Project</a>
 </footer>
 
 </body>
