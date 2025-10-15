@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Australian Landmarks</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheetackground: #e6f0fa;
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background: #f4f8fc;
       font-family: 'Segoe UI', Tahoma, sans-serif;
       transition: background 0.3s, color 0.3s;
     }
@@ -16,29 +19,27 @@
       background: #1e1e1e;
       color: #f4f4f4;
     }
-    .navbar {
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .toggle-btn {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      z-index: 1000;
+    header {
+      background: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
     .search-bar {
       margin: 20px auto;
       max-width: 500px;
     }
-    .card {
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
     .card img {
-      width: 100%;
       height: 200px;
       object-fit: cover;
+    }
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
     }
     .cities-container {
       display: none;
@@ -57,7 +58,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      background: #f1f1f1;
+      background: #e6ebf1;
     }
     footer img {
       max-width: 120px;
@@ -74,18 +75,14 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-  <div class="container justify-content-center">
-    #sydneySydney</a>
-    #canberraCanberra</a>
-    #apostlesThe Twelve Apostles</a>
-    #brisbaneBrisbane</a>
-    <a class="nav-link text-white>
-</nav>
+<header>
+  <h1>Australian Landmarks</h1>
+</header>
 
 <!-- Dark Mode Button -->
-<button class="btn btn-secondary toggle-btn" onclick="toggleDarkMode()">Dark Mode</button>
+<div class="text-end p-3">
+  <button class="btn btn-secondary" onclick="toggleDarkMode()">Dark Mode</button>
+</div>
 
 <!-- Search Bar -->
 <div class="container">
@@ -94,7 +91,7 @@
 
 <!-- Cities Button -->
 <div class="container text-center my-3">
-  <button class="btn btn-primary" onclick="toggleCities()">Cities</button>
+  <button class="btn btn-primary" onclick="toggleCities()">Show Cities</button>
   <div class="cities-container" id="cities">
     <div class="city" data-target="#sydney">Sydney</div>
     <div class="city" data-target="#canberra">Canberra</div>
@@ -106,66 +103,59 @@
 
 <!-- Cards Section -->
 <div class="container my-4">
-  <div id="sydney" class="card">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://upload.wikimedia.org/wikipedia/40/Sydney_Opera_House_Sails.jpg
-      </div>
-      <div class="col-md-8 p-3">
-        <h5>Sydney Opera House</h5>
-        <p>The Sydney Opera House is one of the most famous landmarks in Australia, featuring its iconic sail-shaped design on the harbor.</p>
-        <a href="https://en.wikipedia.orgney_Opera_HouseLearn More</a>
-      </div>
-    </div>
-  </div>
-
-  <div id="canberra" class="card">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Parliament_Housejpg
-      </div>
-      <div class="col-md-8 p-3">
-        <h5>Parliament House</h5>
-        <p>The main government building of Australia, located in Canberra, with modern architecture and a large grass lawn.</p>
-        https://en.wikipedia.org/wiki/Parliament_House,_CanberraLearn More</a>
+  <div class="row g-4">
+    <div id="sydney" class="col-md-6">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Sydney_Opera_House_Sails.jpg" alt="Sydney Opera House" class="card-img-top">
+        <div class="card-body">
+          <h5>Sydney Opera House</h5>
+          <p>One of the most famous landmarks in Australia, featuring its iconic sail-shaped design on the harbor.</p>
+          <a href="https://en.wikipedia.org/wiki/Sydney_Opera_House">Learn More</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="apostles" class="card">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://upload.wikimedia.org/commons/4/4d/Twelve_Apostles_Limestone_Stacks.jpg
-      </div>
-      <div class="col-md-8 p-3">
-        <h5>The Twelve Apostles</h5>
-        <p>Natural limestone stacks off the coast of Victoria, showcasing the stunning beauty of the Australian coastline.</p>
-        https://en.wikipedia.org/wiki/Twelve_Apostles_(Victoria)Learn More</a>
+    <div id="canberra" class="col-md-6">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Parliament_House_Canberra.jpg" alt="Parliament House" class="card-img-top">
+        <div class="card-body">
+          <h5>Parliament House</h5>
+          <p>The main government building of Australia, located in Canberra, with modern architecture and a large grass lawn.</p>
+          <a href="https://en.wikipedia.org/wiki/Parliament_House,_Canberra">Learn More</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="brisbane" class="card">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Brisbaneine.jpg
+    <div id="apostles" class="col-md-6">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Twelve_Apostles_Limestone_Stacks.jpg" alt="The Twelve Apostles" class="card-img-top">
+        <div class="card-body">
+          <h5>The Twelve Apostles</h5>
+          <p>Natural limestone stacks off the coast of Victoria, showcasing the stunning beauty of the Australian coastline.</p>
+          <a href="https://en.wikipedia.org/wiki/Twelve_Apostles_(Victoria)">Learn More</a>
+        </div>
       </div>
-      <div class="col-md-8 p-3">
-        <h5>Brisbane</h5>
-        <p>A modern city with a subtropical climate and a lively riverfront, featuring a vibrant skyline and cultural attractions.</p>
-        <a href="https://en.wikipedia.org/wiki/Brisbane" target    </div>
     </div>
-  </div>
 
-  <div id="adelaide" class="card">
-    <div class="row g-0">
-      <div class="col-md-4">
-        https://upload.wikimedia.org/wikipedia/commons/8/8e/Adelaide_City_Skyline.jpg
+    <div id="brisbane" class="col-md-6">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Brisbane_City_Skyline.jpg" alt="Brisbane" class="card-img-top">
+        <div class="card-body">
+          <h5>Brisbane</h5>
+          <p>A modern city with a subtropical climate and a lively riverfront, featuring a vibrant skyline and cultural attractions.</p>
+          <a href="https://en.wikipedia.org/wiki/Brisbane">Learn More</a>
+        </div>
       </div>
-      <div class="col-md-8 p-3">
-        <h5>Adelaide</h5>
-        <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
-        https://en.wikipedia.org/wiki/AdelaideLearn More</a>
+    </div>
+
+    <div id="adelaide" class="col-md-6">
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Adelaide_City_Skyline.jpg" alt="Adelaide" class="card-img-top">
+        <div class="card-body">
+          <h5>Adelaide</h5>
+          <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
+          <a href="https://en.wikipedia.org/wiki/Adelaide">Learn More</a>
+        </div>
       </div>
     </div>
   </div>
@@ -173,7 +163,7 @@
 
 <!-- Footer -->
 <footer>
-  <img src="w.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png
+  https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png
   <p>About Australia</p>
   <p>Australia is a federal country and monarchy in the continent of Oceania. It is the world's sixth-largest country by total area...</p>
   English Project.pdfVisit English Project</a>
