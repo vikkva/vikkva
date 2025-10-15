@@ -159,6 +159,132 @@
 </script>
 
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Australian Landmarks</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<style>
+  body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: #f4f8fc; }
+  header {
+    background: #007bff; color: white; padding: 15px;
+    display: flex; justify-content: space-between; align-items: center; position: relative;
+  }
+  h1 { margin: 0; font-size: 24px; }
+  .visited-container {
+    background: #0056b3; color: white; padding: 8px 12px; border-radius: 6px;
+    cursor: pointer; font-weight: bold; display: flex; align-items: center; gap: 6px;
+  }
+  .arrow { transition: transform 0.3s; }
+  .arrow.rotate { transform: rotate(90deg); }
+  .city-list {
+    display: none; position: absolute; top: 60px; right: 15px; background: #fff; color: #000;
+    list-style: none; padding: 10px; margin: 0; border-radius: 6px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 220px; opacity: 0; transition: opacity 0.3s ease; z-index: 1000;
+  }
+  .city-list.show { display: block; opacity: 1; }
+  .city-list li { padding: 8px; border-bottom: 1px solid #ddd; }
+  .city-list li a { text-decoration: none; color: #007bff; font-weight: 500; }
+  .city-list li a:hover { text-decoration: underline; }
+  .places-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; margin: 30px auto; max-width: 1200px; padding: 0 15px;
+  }
+  .card {
+    border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: #fff; transition: transform 0.3s;
+  }
+  .card:hover { transform: translateY(-5px); }
+  .card img { width: 100%; height: 200px; object-fit: cover; }
+  .card-body { padding: 15px; }
+  .card-body h5 { margin-bottom: 10px; font-size: 18px; font-weight: bold; }
+  .card-body p { font-size: 14px; color: #555; }
+  .card-body a { color: #007bff; text-decoration: none; font-weight: 500; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Australian Landmarks</h1>
+  <div class="visited-container" onclick="toggleCities()">
+    Visited Cities <span class="arrow">▶</span>
+  </div>
+  <ul class="city-list" id="cityList">
+    <li>Sydney Opera House</li>
+    <li>Canberra Parliament House</li>
+    <li>Twelve Apostles</li>
+    <li>Brisbane</li>
+    <li>Adelaide</li>
+  </ul>
+</header>
+
+<section class="places-grid">
+  <div class="card">
+    Bilder/Opera.png
+    <div class="card-body">
+      <h5>Sydney Opera House</h5>
+      <p>One of the most famous landmarks in Australia, featuring its iconic sail-shaped design on the harbor.</p>
+      Sydney underside.htmlLearn More</a>
+    </div>
+  </div>
+  <div class="card">
+    Bilder/Parliament.jpg
+    <div class="card-body">
+      <h5>Parliament House</h5>
+      <p>The main government building of Australia, located in Canberra, with modern architecture and a large grass lawn.</p>
+      Canberra underside.htmlLearn More</a>
+    </div>
+  </div>
+  <div class="card">
+    Bilder/32.jpg
+    <div class="card-body">
+      <h5>The Twelve Apostles</h5>
+      <p>Natural limestone stacks off the coast of Victoria, showcasing the stunning beauty of the Australian coastline.</p>
+      Twelve underside.htmlLearn More</a>
+    </div>
+  </div>
+  <div class="card">
+    Bilder/Brisbane (2).jpg
+    <div class="card-body">
+      <h5>Brisbane</h5>
+      <p>A modern city with a subtropical climate and a lively riverfront, featuring a vibrant skyline and cultural attractions.</p>
+      Brisbane underside.htmlLearn More</a>
+    </div>
+  </div>
+  <div class="card">
+    Bilder/article.mobile.avif
+    <div class="card-body">
+      <h5>Adelaide</h5>
+      <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
+      Adelaide underside.htmlLearn More</a>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleCities() {
+  const list = document.getElementById('cityList');
+  const arrow = document.querySelector('.arrow');
+  if (list.classList.contains('show')) {
+    list.classList.remove('show');
+    arrow.classList.remove('rotate');
+  } else {
+    list.classList.add('show');
+    arrow.classList.add('rotate');
+  }
+}
+document.addEventListener('click', function(event) {
+  const list = document.getElementById('cityList');
+  const button = document.querySelector('.visited-container');
+  if (!button.contains(event.target) && !list.contains(event.target)) {
+    list.classList.remove('show');
+    document.querySelector('.arrow').classList.remove('rotate');
+  }
+});
+</script>
+
+</body>
+</html>
 
 
 </body>
