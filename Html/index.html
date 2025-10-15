@@ -155,22 +155,19 @@
   </div>
 </section>
 
-<script>
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-  }
+<header>
+  <h1>Australian Landmarks</h1>
+  <div class="visited-container" onclick="toggleCities()">
+    Visited Cities <span class="arrow">▶</span>
+  </div>
+  <ul class="city-list" id="cityList">
+    <li><a href="Sydney underside.html">Sydney Opera House</a></li>
+    <li><a href="Canberra underside.html">Canberra Parliament House</a></li>
+    <li><a href="Twelve underside.html">The Twelve Apostles</a></li>
+    <li><a href="Brisbane underside.html">Brisbane</a></li>
+    <li><a href="Adelaide underside.html">Adelaide</a></li>
+  </ul>
+</header>
 
-  function filterCards() {
-    const query = document.querySelector('.search-bar').value.toLowerCase();
-    document.querySelectorAll('.card').forEach(card => {
-      card.style.display = card.innerText.toLowerCase().includes(query) ? '' : 'none';
-    });
-  }
-</script>
-
-</body><body>
-  <footer>
-    <p>&copy; 2023 Australian Landmarks. All rights reserved.</p>
-  </footer>
 </body>
 </html>
