@@ -158,5 +158,62 @@
   }
 </script>
 
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.collapsible {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 14px;
+  width: 200px;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.active, .collapsible:hover {
+  background-color: #0056b3;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background-color: #f4f8fc;
+  border-radius: 6px;
+}
+</style>
+</head>
+<body>
+
+<button class="collapsible">Visited Cities ▶</button>
+<div class="content">
+  <p><a href="Sydney underside.html">Sydney Opera House</a></p>
+  <p><a href="Canberra underside.html">Parliament House</a></p>
+  <p><a href="Twelve underside.html">The Twelve Apostles</a></p>
+  <p><a href="Brisbane underside.html">Brisbane</a></p>
+  <p><a href="Adelaide underside.html">Adelaide</a></p>
+</div>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+for (var i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
 </body>
 </html>
