@@ -158,7 +158,8 @@
   }
 </script>
 
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -183,14 +184,25 @@
     background: #007bff;
     color: white;
     padding: 15px;
-    display: flex;
-    space-between;
-    align-items: center;
-    position: relative;
+    text-align: center;
   }
   h1 {
     margin: 0;
     font-size: 24px;
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+  .search-bar {
+    width: 60%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
   }
   .visited-container {
     background: #0056b3;
@@ -198,6 +210,7 @@
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
+    position: relative;
   }
   .arrow.rotate {
     transform: rotate(90deg);
@@ -205,8 +218,8 @@
   .city-list {
     display: none;
     position: absolute;
-    top: 60px;
-    right: 15px;
+    top: 40px;
+    right: 0;
     background: #fff;
     color: #000;
     list-style: none;
@@ -235,19 +248,13 @@
   .city-list li a:hover {
     text-decoration: underline;
   }
-  .controls {
+  .places-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 0 15px;
-  }
-  .search-bar {
-    width: 60%;
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
   }
   .places-grid {
     display: grid;
@@ -298,16 +305,6 @@
 
 <header>
   <h1>Australian Landmarks</h1>
-  <div class="visited-container" onclick="toggleCities()">
-    Visited Cities <span class="arrow">▶</span>
-  </div>
-  <ul class="city-list" id="cityList">
-    <li><a href="sydney.html">Sydney Opera House</a></li>
-    <li><a href="canberra.html">Canberra Parliament House</a></li>
-    <li><a href="twelve.html">The Twelve Apostles</a></li>
-    <li><a href="brisbane.html">Brisbane</a></li>
-    <li><a href="adelaide.html">Adelaide</a></li>
-  </ul>
 </header>
 
 <div class="controls">
@@ -315,17 +312,30 @@
   <button class="btn btn-secondary" onclick="toggleDarkMode()">Dark Mode</button>
 </div>
 
+<div class="places-header">
+  <div class="visited-container" onclick="toggleCities()">
+    Visited Cities <span class="arrow">▶</span>
+    <ul class="city-list" id="cityList">
+      <li><a href="sydney.html">Sydney Opera House</a></li>
+      <li><a href="canberra.html">Canberra Parliament House</a></li>
+      <li><a href="twelve.html">The Twelve Apostles</a></li>
+      <li><a href="brisbane.html">Brisbane</a></li>
+      <li><a href="adelaide.html">Adelaide</a></li>
+    </ul>
+  </div>
+</div>
+
 <section class="places-grid">
   <div class="card">
-    <img src="Ba.png
+    Bilder/Opera.png
     <div class="card-body">
       <h5>Sydney Opera House</h5>
       <p>One of the most famous landmarks in Australia, featuring its iconic sail-shaped design on the harbor.</p>
-      sydney.htmlLearn More</a>
+      <adney.htmlLearn More</a>
     </div>
   </div>
   <div class="card">
-    Bilder/Parliament.jpg
+    <img src="Bilder/Parliament.jpg" alt="Parliament House" />
     <div class="card-body">
       <h5>Parliament House</h5>
       <p>The main government building of Australia, located in Canberra, with modern architecture and a large grass lawn.</p>
@@ -337,7 +347,7 @@
     <div class="card-body">
       <h5>The Twelve Apostles</h5>
       <p>Natural limestone stacks off the coast of Victoria, showcasing the stunning beauty of the Australian coastline.</p>
-      <a hrefhtmlLearn More</a>
+      twelve.htmlLearn More</a>
     </div>
   </div>
   <div class="card">
@@ -353,7 +363,7 @@
     <div class="card-body">
       <h5>Adelaide</h5>
       <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
-      adelaide.htmlLearn More</a>
+      <delaide.htmlLearn More</a>
     </div>
   </div>
 </section>
@@ -391,7 +401,6 @@ document.addEventListener('click', function(event) {
 
 </body>
 </html>
-
 
 
 </body>
