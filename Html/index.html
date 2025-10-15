@@ -25,51 +25,65 @@
       padding: 20px;
       text-align: center;
     }
-    .search-bar {
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
       margin: 20px auto;
-      max-width: 500px;
+      padding: 0 15px;
     }
-    .card img {
-      height: 200px;
-      object-fit: cover;
+    .search-bar {
+      width: 60%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .places-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 30px auto;
+      max-width: 1200px;
+      padding: 0 15px;
     }
     .card {
       border-radius: 10px;
+      overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #fff;
       transition: transform 0.3s;
     }
     .card:hover {
       transform: translateY(-5px);
     }
-    .cities-container {
-      display: none;
-      margin: 15px auto;
-      text-align: center;
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
-    .city {
-      margin: 5px 0;
-      font-weight: bold;
-      cursor: pointer;
-      color: #007bff;
+    .card-body {
+      padding: 15px;
     }
-    .city:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #e6ebf1;
-    }
-    footer img {
-      max-width: 120px;
+    .card-body h5 {
       margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
     }
-    #backToTop {
-      display: none;
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
+    .card-body p {
+      font-size: 14px;
+      color: #555;
+    }
+    .dark-mode .card-body p {
+      color: #ccc;
+    }
+    .card-body a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .card-body a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -79,98 +93,56 @@
   <h1>Australian Landmarks</h1>
 </header>
 
-<!-- Dark Mode Button -->
-<div class="text-end p-3">
+<div class="controls">
+  <input type="text" class="search-bar" placeholder="Search for a landmark..." onkeyup="filterCards()">
   <button class="btn btn-secondary" onclick="toggleDarkMode()">Dark Mode</button>
 </div>
 
-<!-- Search Bar -->
-<div class="container">
-  <input type="text" class="form-control search-bar" placeholder="Search for a location..." onkeyup="filterCards()">
-</div>
-
-<!-- Cities Button -->
-<div class="container text-center my-3">
-  <button class="btn btn-primary" onclick="toggleCities()">Show Cities</button>
-  <div class="cities-container" id="cities">
-    <div class="city" data-target="#sydney">Sydney</div>
-    <div class="city" data-target="#canberra">Canberra</div>
-    <div class="city" data-target="#apostles">The Twelve Apostles</div>
-    <div class="city" data-target="#brisbane">Brisbane</div>
-    <div class="city" data-target="#adelaide">Adelaide</div>
-  </div>
-</div>
-
-<!-- Cards Section -->
-<div class="container my-4">
-  <div class="row g-4">
-    <div id="sydney" class="col-md-6">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Sydney_Opera_House_Sails.jpg" alt="Sydney Opera House" class="card-img-top">
-        <div class="card-body">
-          <h5>Sydney Opera House</h5>
-          <p>One of the most famous landmarks in Australia, featuring its iconic sail-shaped design on the harbor.</p>
-          <a href="https://en.wikipedia.org/wiki/Sydney_Opera_House">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <div id="canberra" class="col-md-6">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Parliament_House_Canberra.jpg" alt="Parliament House" class="card-img-top">
-        <div class="card-body">
-          <h5>Parliament House</h5>
-          <p>The main government building of Australia, located in Canberra, with modern architecture and a large grass lawn.</p>
-          <a href="https://en.wikipedia.org/wiki/Parliament_House,_Canberra">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <div id="apostles" class="col-md-6">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Twelve_Apostles_Limestone_Stacks.jpg" alt="The Twelve Apostles" class="card-img-top">
-        <div class="card-body">
-          <h5>The Twelve Apostles</h5>
-          <p>Natural limestone stacks off the coast of Victoria, showcasing the stunning beauty of the Australian coastline.</p>
-          <a href="https://en.wikipedia.org/wiki/Twelve_Apostles_(Victoria)">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <div id="brisbane" class="col-md-6">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Brisbane_City_Skyline.jpg" alt="Brisbane" class="card-img-top">
-        <div class="card-body">
-          <h5>Brisbane</h5>
-          <p>A modern city with a subtropical climate and a lively riverfront, featuring a vibrant skyline and cultural attractions.</p>
-          <a href="https://en.wikipedia.org/wiki/Brisbane">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <div id="adelaide" class="col-md-6">
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Adelaide_City_Skyline.jpg" alt="Adelaide" class="card-img-top">
-        <div class="card-body">
-          <h5>Adelaide</h5>
-          <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
-          <a href="https://en.wikipedia.org/wiki/Adelaide">Learn More</a>
-        </div>
-      </div>
+<section class="places-grid">
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Sydney_Opera_House_Sails.jpg" alt="Sydney Opera House">
+    <div class="card-body">
+      <h5>Sydney Opera House</h5>
+      <p>One of the most famous landmarks in Australia, featuring its iconic sail-shaped design on the harbor.</p>
+      <a href="https://en.wikipedia.org/wiki/Sydney_Opera_House">Learn More</a>
     </div>
   </div>
-</div>
 
-<!-- Footer -->
-<footer>
-  https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png
-  <p>About Australia</p>
-  <p>Australia is a federal country and monarchy in the continent of Oceania. It is the world's sixth-largest country by total area...</p>
-  English Project.pdfVisit English Project</a>
-</footer>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Parliament_House_Canberra.jpg" alt="card-body">
+      <h5>Parliament House</h5>
+      <p>The main government building of Australia, located in Canberra, with modern architecture and a large grass lawn.</p>
+      <a href="https://en.wikipedia.org/wiki/Parliament_House_(Australia)">Learn More</a>
+    </div>
+  </div>
 
-<!-- Back to Top Button -->
-<button id="backToTop" class="btn btn-primary">↑ Top</button>
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Twelve_Apostles_Limestone_Stacks.jpg" alt="The Twelve Apostles">
+    <div class="card-body">
+      <h5>The Twelve Apostles</h5>
+      <p>Natural limestone stacks off the coast of Victoria, showcasing the stunning beauty of the Australian coastline.</p>
+      <a href="https://en.wikipedia.org/wiki/Twelve_Apostles_(Victoria)">Learn More</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Brisbane_City_Skyline.jpg" alt="Brisbane City Skyline">
+    <div class="card-body">
+      <h5>Brisbane</h5>
+      <p>A modern city with a subtropical climate and a lively riverfront, featuring a vibrant skyline and cultural attractions.</p>
+      <a href="https://en.wikipedia.org/wiki/Brisbane">Learn More</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://upload.wikimedia.org/wikipedia/8e/Adelaide_City_Skyline.jpg" alt="Adelaide City Skyline">
+    <div class="card-body">
+      <h5>Adelaide</h5>
+      <p>Known for its festivals and nearby wine regions, Adelaide is the capital of South Australia and a cultural hub.</p>
+      <a href="https://en.wikipedia.org/wiki/Adelaide">Learn More</a>
+    </div>
+  </div>
+</section>
 
 <script>
   function toggleDarkMode() {
@@ -183,196 +155,7 @@
       card.style.display = card.innerText.toLowerCase().includes(query) ? '' : 'none';
     });
   }
-
-  function toggleCities() {
-    const cities = document.getElementById('cities');
-    cities.style.display = cities.style.display === 'block' ? 'none' : 'block';
-  }
-
-  document.querySelectorAll('.city').forEach(city => {
-    city.addEventListener('click', function() {
-      document.querySelector(this.getAttribute('data-target')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
-  });
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
 </script>
-
- <style>
-    .knapp {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #4366ac;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-    .knapp:hover {
-      background-color: #1e7e34;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Google Fonts: Inter -->
-  <link href="" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f6fbff;
-      --card: #ffffff;
-      --muted: #6b7280;
-      --accent-1: #0f766e;
-      --accent-2: #f97316;
-      --shadow: 0 6px 18px rgba(12,20,40,0.08);
-      --radius: 14px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, var(--bg), #eef7fb 60%);
-      color: #0f172a;
-      -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: 1200px; margin: 32px auto; padding: 24px; }
-    h1 { font-size: 28px; margin-bottom: 8px; font-weight: 800; }
-    p { color: var(--muted); }
-
-    /* Header */
-    header.hero { display: flex; flex-direction: column; gap: 24px; margin-bottom: 26px; min-height: 300px; }
-    .intro { background: linear-gradient(135deg, rgba(15,118,110,0.06), rgba(249,115,22,0.04)); padding: 28px; border-radius: var(--radius); box-shadow: var(--shadow); }
-    .highlight { display: flex; justify-content: space-between; align-items: center; padding: 18px; border-radius: var(--radius); background: linear-gradient(90deg, rgba(2,6,23,0.02), rgba(255,255,255,0.7)); box-shadow: var(--shadow); margin-top: 18px; }
-    .cta { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); color: white; padding: 10px 14px; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; }
-
-    .stats { display: flex; gap: 12px; margin-top: 10px; }
-    .stat { background: var(--card); padding: 10px 12px; border-radius: 12px; box-shadow: var(--shadow); text-align: center; min-width: 80px; }
-    .stat strong { display: block; font-weight: 700; }
-
-    /* Grid and Cards */
-    .places-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-      margin-top: 20px;
-    }
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(12,20,40,0.12); }
-    .card .img { height: 180px; background-size: cover; background-position: center; }
-    .card-body { padding: 14px; }
-    .card-body h3 { margin-bottom: 8px; font-size: 18px; }
-    .card-body p { color: var(--muted); font-size: 14px; }
-
-    /* Gallery */
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-top: 20px; }
-    .gallery img { width: 100%; height: 120px; object-fit: cover; border-radius: 10px; }
-
-    /* Tips */
-    .tips { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
-    .tip { background: var(--card); padding: 12px; border-radius: 12px; display: flex; gap: 12px; align-items: flex-start; box-shadow: var(--shadow); }
-
-    footer { margin-top: 20px; text-align: center; color: var(--muted); font-size: 13px; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header class="hero">
-      <div class="intro">
-        <h1>Australia — My Visited Places</h1>
-        <p>Explore highlights, photos, and tips from my trip.</p>
-        <div class="highlight">
-          <div>Favorite moment: Be a tourist in general</div>
-          <button class="cta" id="see-constructions-btn">See Constructions</button>
-        </div>
-        <div class="stats">
-          <div class="stat"><strong>5</strong>Visited Places</div>
-          <div class="stat"><strong>3,200 km</strong>Total Distance</div>
-          <div class="stat"><strong>2 weeks</strong>Travel Time</div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Cities Constructions Section -->
-    <section id="constructions" class="places-grid">
-      <h3>Cities Constructions</h3>
-
-      <div class="card">
-        <div class="img" style="background-image:url('Bilder/Opera.png')"></div>
-        <div class="card-body">
-          <h3>Sydney Opera House</h3>
-          <p>Featuring distinctive white sail-shaped roofs rising above Sydney Harbour.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="img" style="background-image:url('Bilder/Parliament.jpg')"></div>
-        <div class="card-body">
-          <h3>Parliament House</h3>
-          <p>Modern architectural design with a large grass lawn and gardens in front, located in Canberra.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="img" style="background-image:url('Bilder/32.jpg')"></div>
-        <div class="card-body">
-          <h3>The Twelve Apostles</h3>
-          <p>Iconic limestone stacks off the coast of Port Campbell, Victoria, Australia.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="img" style="background-image:url('Bilder/Brisbane (2).jpg')"></div>
-        <div class="card-body">
-          <h3>Brisbane</h3>
-          <p>Modern skyline with the Brisbane River in the foreground and vibrant city life.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="img" style="background-image:url('Bilder/article.mobile.png')"></div>
-        <div class="card-body">
-          <h3>Adelaide</h3>
-          <p>Capital of South Australia, featuring urban architecture and a welcoming atmosphere.</p>
-        </div>
-      </div>
-    </section>
-
-    
-
-    <!-- Tips -->
-    <h3>Tips</h3>
-    <div class="tips">
-      <div class="tip"><strong>Sunscreen:</strong> Remember to apply even on cloudy days.</div>
-      <div class="tip"><strong>Snorkeling:</strong> Book early for calm water and clear visibility.</div>
-      <div class="tip"><strong>Rental Car:</strong> Perfect for road trips and flexibility.</div>
-    </div>
-
-    <footer>Saved 2025</footer>
-  </div>
-
-  <script>
-    // Smooth scroll to constructions section
-    document.getElementById('see-constructions-btn').addEventListener('click', function() {
-      document.getElementById('constructions').scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
-</body> 
-</html>
-
-
-
-
-
 
 </body>
 </html>
