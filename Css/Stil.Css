@@ -49,3 +49,55 @@
   grid-area: footer;
 }
 
+.visited-container {
+  background: #0056b3;
+  color: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.arrow {
+  transition: transform 0.3s;
+}
+.arrow.rotate {
+  transform: rotate(90deg);
+}
+.city-list {
+  display: none;
+  background: #fff;
+  color: #000;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.city-list.show {
+  display: block;
+  opacity: 1;
+}
+.city-list li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.city-list li a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+.city-list li a:hover {
+  text-decoration: underline;
+}
+

@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Australian Landmarks</title>
-  https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <style>
     body {
       background: #f4f8fc;
@@ -25,7 +24,6 @@
       color: white;
       padding: 20px;
       text-align: center;
-      position: relative;
     }
     .controls {
       display: flex;
@@ -40,57 +38,6 @@
       padding: 8px;
       border-radius: 6px;
       border: 1px solid #ccc;
-    }
-    .visited-container {
-      background: #0056b3;
-      color: white;
-      border-radius: 6px;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .arrow {
-      transition: transform 0.3s;
-    }
-    .arrow.rotate {
-      transform: rotate(90deg);
-    }
-    .city-list {
-      display: none;
-      background: #fff;
-      color: #000;
-      list-style: none;
-      padding: 10px;
-      margin: 0;
-      border-radius: 6px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      position: absolute;
-      top: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 250px;
-      z-index: 1000;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .city-list.show {
-      display: block;
-      opacity: 1;
-    }
-    .city-list li {
-      padding: 8px;
-      border-bottom: 1px solid #ddd;
-    }
-    .city-list li a {
-      text-decoration: none;
-      color: #007bff;
-      font-weight: 500;
-    }
-    .city-list li a:hover {
-      text-decoration: underline;
     }
     .places-grid {
       display: grid;
@@ -197,6 +144,7 @@
     </div>
   </div>
 </section>
+
 <script>
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
@@ -208,28 +156,11 @@
       card.style.display = card.innerText.toLowerCase().includes(query) ? '' : 'none';
     });
   }
-
-  function toggleCities() {
-    const list = document.getElementById('cityList');
-    const arrow = document.querySelector('.arrow');
-    if (list.classList.contains('show')) {
-      list.classList.remove('show');
-      arrow.classList.remove('rotate');
-    } else {
-      list.classList.add('show');
-      arrow.classList.add('rotate');
-    }
-  }
-
-  document.addEventListener('click', function(event) {
-    const list = document.getElementById('cityList');
-    const button = document.querySelector('.visited-container');
-    if (!button.contains(event.target) && !list.contains(event.target)) {
-      list.classList.remove('show');
-      document.querySelector('.arrow').classList.remove('rotate');
-    }
-  });
 </script>
+
+
+
+
 
 </body>
 </html>
