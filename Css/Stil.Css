@@ -192,6 +192,9 @@ h1 {
 }
 
 /* State cards / alternate grid */
+
+/* Dark mode */
+.dark-mode colgroup {background-color: black; color: white;}
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -203,7 +206,7 @@ h1 {
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   padding: 15px;
   text-align: center;
-  color: var(--text);
+ 
 }
 .state-card img {
   width: 100%;
@@ -213,13 +216,13 @@ h1 {
 }
 .state-card h2 {
   margin: 10px 0;
-  color: var(--text);
+
 }
 .state-card p {
   text-align: left;
   margin: 5px 0;
   font-size: 14px;
-  color: var(--text);
+ 
 }
 
 /* Utility */
