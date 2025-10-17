@@ -271,12 +271,8 @@ header {
 }
 
 .info-box {
-    background-color: #fff;
-    border-left: 5px solid #004080;
-    padding: 15px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    
+   
+
 @media (prefers-color-scheme: dark) {
     .info-box {
         background-color: #000000; /* Black background in dark mode */
