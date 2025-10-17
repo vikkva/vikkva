@@ -122,3 +122,23 @@ body {
   .dark-mode .card-body p {
     color: #ccc;
   }
+
+  .card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.info-box {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.info-box h4 {
+  margin-bottom: 8px;
+  color: #007bff;
+}
