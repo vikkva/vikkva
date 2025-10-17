@@ -326,3 +326,43 @@ body {
     margin: 5px 0;
     font-size: 14px;
   }
+
+
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    color: black; /* Ensures all text is black */
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  .state-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    color: black; /* Explicitly set text color to black */
+  }
+  .state-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .state-card h2 {
+    margin: 10px 0;
+    color: black; /* Ensure headings are black */
+  }
+  .state-card p {
+    text-align: left;
+    margin: 5px 0;
+    font-size: 14px;
+    color: black; /* Ensure paragraph text is black */
+  }
+</style>
