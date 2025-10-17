@@ -108,64 +108,104 @@ document.addEventListener('click', function(event) {
 });
 </script>
 
-<div class="card">
-  Bilder/Twelve_Apostles.jpg
-  <div class="card-body">
-    <h5 class="card-title">The Twelve Apostles</h5>
-    <p class="card-text">Natural limestone stacks off the coast of Victoria showcasing the stunning beauty of the Australian coastline.</p>
-
-    <div class="info-box">
-      <h6>State Flower:</h6>
-      <p>Common Heath (Epacris impressa)</p>
-    </div>
-
-    <div class="info-box">
-      <h6>State Bird & Animal:</h6>
-      <p>Helmeted Honeyeater & Leadbeater's Possum</p>
-    </div>
-
-    <div class="info-box">
-      <h6>Native Species:</h6>
-      <p>Leadbeater's Possum (endemic to Victoria)</p>
-    </div>
-
-    <div class="info-box">
-      <h6>State Motto & Symbol:</h6>
-      <p>"Peace and Prosperity" – State Emblem: Common Heath</p>
-    </div>
-
-    <div class="info-box">
-      <h6>Political System:</h6>
-      <p>Parliamentary constitutional monarchy</p>
-    </div>
-
-    <div class="info-box">
-      <h6>Historical Places:</h6>
-      <p>Ballarat Goldfields – pivotal in the Australian gold rush.</p>
-    </div>
-
-    <div class="info-box">
-      <h6>Tourist Attractions:</h6>
-      <p>Great Ocean Road (Free access, open year-round)</p>
-    </div>
-
-    <div class="info-box">
-      <h6>Dining Options:</h6>
-      <ul>
-        <li>Chris's Beacon Point – Modern Australian, $$</li>
-        <li>La Bimba – Seafood, $$</li>
-        <li>Moonlight Head – Fine dining, $$$</li>
-      </ul>
-    </div>
-
-    <a href="https://en.wikipedia.org/wiki/Twelve_Apostles" class="btn">Read more</a>
-  </div>
-</div>
 
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian States Travel Guide</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <header>
+        <h1>Explore Australia's States & Territories</h1>
+    </header>
 
+    <!-- CARD GRID SECTION -->
+    <!-- Displays a grid of cards with images, short descriptions, and Wikipedia links -->
+    <section class="places-grid">
+        <!-- Card for New South Wales -->
+        <div class="card">
+            <img src="images/nsw.jpg" alt="New South Wales">
+            <p>Home to the iconic Sydney Opera House and Harbour Bridge.</p>
+            <a href="https://en.wikipedia.org/wiki/New_South_Wales" target="_blank">Learn more</a>
+        </div>
 
+        <!-- Card for Queensland -->
+        <div class="card">
+            <img src="images/qld.jpg" alt="Queensland">
+            <h2>Queensland</h2>
+            <p>Explore the Great Barrier Reef and tropical rainforests.</p>
+            <a href="https://en.wikipedia.org/wiki/Queensland">Learn more</a>
+        </div>
 
+        <!-- Card for South Australia -->
+        <div class="card">
+            <img src="images/sa.jpg" alt="South Australia">
+            <h2>South Australia</h2>
+            <p>Famous for wine regions and wildlife on Kangaroo Island.</p>
+            <a href="https://en.wikipedia.org/wiki/South_Australia">Learn more</a>
+        </div>
+
+        <!-- Card for Western Australia -->
+        <div class="card">
+            <img src="images/wa.jpg" alt="Western Australia">
+            <h2>Western Australia</h2>
+            <p>Discover Perth, Margaret River, and the Pinnacles Desert.</p>
+            <a href="https://en.wikipedia.org/wiki/Western_Australia">Learn more</a>
+        </div>
+
+        <!-- Card for Tasmania -->
+        <div class="card">
+            <img src="images/tas.jpg" alt="Tasmania">
+            <h2>Tasmania</h2>
+            <p>Wilderness adventures and historic sites await.</p>
+            <a href="https://en.wikipedia.org/wiki/Tasmania">Learn more</a>
+        </div>
+
+        <!-- Card for Northern Territory -->
+        <div class="card">
+            <img src="images/nt.jpg" alt="Northern Territory">
+            <h2>Northern Territory</h2>
+            <p>Experience Uluru and Kakadu National Park.</p>
+            <a href="https://en.wikipedia.org/wiki/Northern_Territory">Learn more</a>
+        </div>
+
+        <!-- Card for ACT -->
+        <div class="card">
+            <img src="images/act.jpg" alt="Australian Capital Territory">
+            <h2>Australian Capital Territory</h2>
+            <p>Visit Parliament House and national museums in Canberra.</p>
+            <a href="https://en.wikipedia.org/wiki/Australian_Capital_Territory">Learn more</a>
+        </div>
+
+        <!-- Card for Victoria -->
+        <div class="card">
+            <img src="images/vic.jpg" alt="Victoria">
+            <h2>Victoria</h2>
+            <p>Marvel at the Twelve Apostles and Great Ocean Road.</p>
+            <a href="https://en.wikipedia.org/wiki/Victoria_(Australia)">Learn more</a>
+        </div>
+    </section>
+
+    <!-- DETAILED INFO SECTION -->
+    <!-- Each info-box contains details for one state -->
+    <section class="details">
+        <div class="info-box">
+            <h2>New South Wales</h2>
+            <p><strong>State Flower:</strong> Waratah</p>
+            <p><strong>State Bird:</strong> Kookaburra</p>
+            <p><strong>State Animal:</strong> Platypus</p>
+            <p><strong>Motto:</strong> Orta recens quam pura nites</p>
+            <p><strong>Political System:</strong> Parliamentary constitutional monarchy</p>
+            <p><strong>Tourist Attractions:</strong> Sydney Harbour Bridge, Blue Mountains</p>
+            <p><strong>Dining Options:</strong> Quay, Bennelong, Aria</p>
+        </div>
+
+        <!-- Repeat similar info-boxes for Queensland, SA, WA, TAS, NT, ACT, VIC -->
+        <!-- Add the details you want for each -->
+    </section>
+</body>
+</html>
 
 </body>
 </html>
