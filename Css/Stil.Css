@@ -272,20 +272,23 @@ header {
 
 .info-box {
    
+.box {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
 
+/* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-    .info-box {
-        background-color: #000000; /* Black background in dark mode */
-        border-left: 5px solid #66b2ff; /* Accent color */
-        color: #e0e0e0; /* Light text */
-    }
+  .box {
+    background-color: black;
+    color: white;
+  }
 
-    .info-box h2 {
-        color: #66b2ff;
-    }
-}
 
-}
+
+
 
 .info-box h2 {
     margin-top: 0;
